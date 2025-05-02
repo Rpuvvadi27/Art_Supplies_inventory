@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist</title>
+  <link rel="stylesheet" href="stylewish.css">
+</head>
+<body>
+  <h1>Art Supplies Wishlist</h1>
+  <nav>
+    <ul>
+      <li class="navBar"><a href="homepage.html">Inventory</a></li>
+      <li class="navBar"><a href="wishlist.html">Wishlist</a></li>
+      <li class="navBar"><a href="upcomingproj.html">Upcoming Projects</a></li>
+    </ul>
+  </nav>
+
+  <h2>My Wishlist</h2>
+  <input type="text" id="searchInput" placeholder="Search by product name">
+  <button id="addItemBtn">Add Item</button>
+
+  <table id="itemsTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Project</th>
+        <th>Product Link</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Chatbot Section -->
+  <div id="chatbot">
+    <h3 style = "padding-top: 20px;">Need Recommendations?</h3>
+    <div id="chat-history"></div>
+    <input type="text" id="chat-input" placeholder="Ask for art supplies...">
+    <button id="send-chat-btn">Send</button>
+    <button id="clear-chat-btn">Clear Chat</button>
+  </div>
+
+  <div id="itemModal" class="modal">
+    <div class="modal-content">
+      <span class="closeBtn">&times;</span>
+      <h2 id="modalTitle">Add Item</h2>
+      <form id="itemForm">
+        <label>Name:<input type="text" id="productName" required></label>
+        <label>Category:
+          <select id="category">
+            <option>Paint</option>
+            <option>Tools</option>
+            <option>Beads</option>
+            <option>Fabric</option>
+            <option>Yarn</option>
+            <option>Thread</option>
+            <option>Clay</option>
+            <option>Glaze/Finishes</option>
+            <option>Markers/Pens</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Project:
+          <select id="projectName">
+            <option value="">— For Fun (no project) —</option>
+          </select>
+        </label>
+        <label>Product Link:<input type="text" id="link"></label>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="deleteModal" class="modal">
+    <div class="modal-content">
+      <p>Are you sure you want to delete this item?</p>
+      <button id="confirmDelete">Yes, delete it</button>
+      <button id="cancelDelete">Cancel</button>
+    </div>
+  </div>
+
+<!-- Help Button -->
+<button id="helpBtn" title="Help" class="help-button">?</button>
+
+<!-- Help Button Description Modal -->
+<div id="helpModal" class="modal">
+  <div class="modal-content">
+    <span class="closeBtn" id="closeHelpModal">&times;</span>
+    <h2>What is this page?</h2>
+    <p>
+      This is your Wishlist page where you can track art supplies you plan to purchase. Use the table to view each item by name, 
+      category, associated project, and an optional product link. You can edit or delete any item using the buttons in the 
+      "Actions" column.
+    </p>
+    <p style="padding-top: 10px;">
+      When adding an item, you can select a related project from the dropdown if it corresponds to something on your Upcoming 
+      Projects list. If you have a specific product in mind, you can also include a clickable link to that item in the 
+      "Product Link" field.
+    </p>
+    <p style="padding-top: 10px;">
+      At the bottom of the page, you'll find a chatbot. You can ask it basic art-related questions about materials like paint, 
+      brushes, beads, yarn, thread, and more. It can offer tips, product suggestions, or help you understand what tools are 
+      best for your creative projects.
+    </p>
+  </div>
+</div>
+
+  <script src="scriptwish.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
